@@ -1,0 +1,106 @@
+ominprof : # of profiles   
+nl : # of layers, usually 24
+nf : # of state vector, usually 37 (parameter for weighting function)
+nalb : # of albedos, usually 3
+ngas : # of gases
+naer : 
+
+omilon/omilat[ominprof,5] : box corner point and center point
+  [ominprof,0] : left bottom
+  [ominprof,1] : left top
+  [ominprof,2] : right top
+  [ominprof,3] : right bottom
+  [ominprof,4] : center
+omisza[ominprof] : solar zenith angle
+omivza[ominprof] : viewing zenith angle
+omiaza[ominprof] : azimuth angle
+omirms[ominprof,3] : fitting residual for all wavelength normalized for measurement error (I_weight)
+  [ominprof,0] : all wavelength range
+  [ominprof,1] : uv1 range
+  [ominprof,2] : uv2 range
+omiavgres[ominprof,3] : fitting residual for all wavelength normalized for fitted radiance (I_fit) 
+  [ominprof,0] : all wavelength range
+  [ominprof,1] : uv1 range
+  [ominprof,2] : uv2 range
+omicfrac[ominprof] : cloud fraction
+omictp[ominprof] : cloud top pressure
+omicldflg[ominprof]
+omiai[ominprof]
+omiutc[ominprof] : utc
+omintp[ominprof] : tropopause layer number
+ominw[ominprof] : # of wavelength
+omisaa[ominprof]
+omiexval[ominprof] : exval from rtm simualtion
+ominiter[ominprof] : # of rtm iteration 
+ominspike[ominprof]
+omiglint[ominprof]
+omildwt[ominprof]
+omisnow[ominprof]
+omimon[ominprof] : month
+omiday[ominprof] : day
+omiyear[ominprof] : year
+omipix[ominprof] : pixel #
+omiline[ominprof] : line #
+omitaod[ominprof,68]
+omitsca[ominprof,68]
+omisaod[ominprof,68]
+omialb[ominprof, nalb] : 0 , 1 , 2 ,
+  [ominprof,0] : 0th order of UV1
+  [ominprof,1] : 0th order of UV2
+  [ominprof,2] : 1th order of UV2
+atmos[ominprof,3,nl+1] : atmospheric profile
+  [ominprof,0,nl+1] : p profile
+  [ominprof,1,nl+1] : z profile
+  [ominprof,2,nl+1] : t profile
+ozprofs[ominprof,5,nl] : ozone profile
+  [ominprof,0,nl] : ozone a priori 
+  [ominprof,1,nl] : ozone a priori error (std)
+  [ominprof,2,nl] : ozone
+  [ominprof,3,nl] : ozone profile error (std)
+  [ominprof,4,nl] : ozone profile normalized error (nstd)
+omicol[ominprof, 3, 6]
+  [ominprof,0,*] : total column ozone
+  [ominprof,1,*] : stratospheric column ozone
+  [ominprof,2,*] : tropospheric column ozone
+  [ominprof,*,0] : column value
+  [ominprof,*,1] : column ozone std
+  [ominprof,*,2] : column ozone noramlized std
+  [ominprof,*,3] : dfs 
+  [ominprof,*,4] : a priori column ozone
+  [ominprof,*,5] : a priori error column ozone 
+omitrace[1]
+omifitvar[ominprof,3,nf]
+  [ominprof,0,nf] : fitvar value
+  [ominprof,1,nf] : fitvar std
+  [ominprof,2,nf] : fitvar normailzed std
+omiavgk[ominprof,nl,nl] : averagin kernel
+omicorrel[ominprof,nf,nf] : correlation between fitvar
+omicovar[ominprof,nl,nl] 
+omicontri[ominprof,nl,217]
+omifitspec[ominprof,217] : fitted spectrum,       /get_fitres or /get_radcal
+omisimrad[ominprof,217] : simulated radiance,     /get_fitres or /get_radcal
+omiwaves[ominprof,217] : waves ,                  /get_fitres or /get_radcal
+omiclmrad[ominprof,217]                           /get_radcal
+omiactrad[ominprof,217] : actual radiance,        /get_radcal
+omiwf[ominprof,217,nf] : weighting fuction for fitvar
+omisnr[ominprof,217] : signal to noise ratio
+omiring[1] : /get_ring
+nfail
+flon
+flat
+fsza
+fvza
+faza
+fmon
+fday
+fyear
+fpix
+fline
+fsaa
+fexval
+fniter
+fnspike
+fglint
+fldwt
+fsnow
+  
